@@ -22,7 +22,7 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        "templer.core",
+        "templer.plone",
     ],
     entry_points='',
     )
