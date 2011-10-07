@@ -24,5 +24,8 @@ setup(
     install_requires=[
         "templer.plone",
     ],
-    entry_points='',
+    entry_points="""
+    [paste.paster_create_template]
+    sfu_policy = sixieskel.policy.template:SixiePolicy
+    """,
     )
