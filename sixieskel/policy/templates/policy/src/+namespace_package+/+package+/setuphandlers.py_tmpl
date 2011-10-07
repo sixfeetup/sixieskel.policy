@@ -1,0 +1,29 @@
+from sixfeetup.utils import helpers as sfutils 
+
+
+def importVariousInitial(context):
+    """Run the setup handlers for the initial profile"""
+    if context.readDataFile('${namespace_package}_${package}-initial.txt') is None:
+        return
+    members = [
+        {'id': 'staff',
+         'password': '$staff_password',
+         'roles': ['Manager', 'Member'],
+         'properties': {
+             'email': 'changeme@example.com',
+             'fullname': '${namespace_package} Staff',
+             'username': 'staff'
+         }
+        }
+    ]
+    sfutils.addUserAccounts(members)
+
+
+def importVarious(context):
+    """Run the setup handlers for the default profile"""
+    if context.readDataFile('${namespace_package}_${package}-default.txt') is None:
+        return
+    # automagically run a plone migration if needed
+    sfutils.runPortalMigration()
+    # automagically run the upgrade steps for this package
+    sfutils.runUpgradeSteps(u'${namespace_package}.${package}:default')
