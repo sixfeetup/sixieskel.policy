@@ -8,6 +8,9 @@
   <includePlugins package="." />
   <includeDependencies package="." />
 
+  <!-- Upgrades are handled via its own zcml file -->
+  <include file="upgrades.zcml"/>
+
 #if str($zope2product) == 'True' and $namespace_package != 'Products'
   <five:registerPackage package="." initialize=".initialize" />
 #end if
