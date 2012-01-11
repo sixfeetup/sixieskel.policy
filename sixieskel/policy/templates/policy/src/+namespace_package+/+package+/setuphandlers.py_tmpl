@@ -1,4 +1,4 @@
-from sixfeetup.utils import helpers as sfutils 
+from sixfeetup.utils import helpers as sfutils
 
 
 def importVariousInitial(context):
