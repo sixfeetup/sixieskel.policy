@@ -31,6 +31,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:registerProfile
+      name="qa"
+      title="${namespace_package}.${package} (qa)"
+      directory="profiles/qa"
+      description="Configuration profile specifcally for QA instances of ${namespace_package}.${package}"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
   <genericsetup:importStep
       name="${namespace_package}.${package}: default"
       title="${namespace_package}.${package}: Various steps"
