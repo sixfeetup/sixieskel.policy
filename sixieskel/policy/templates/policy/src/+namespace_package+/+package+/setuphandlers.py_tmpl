@@ -27,3 +27,4 @@ def importVarious(context):
     sfutils.runPortalMigration()
     # automagically run the upgrade steps for this package
     sfutils.runUpgradeSteps(u'${namespace_package}.${package}:default')
+    sfutils.refreshAssetRegistry()
